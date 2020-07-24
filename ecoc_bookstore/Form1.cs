@@ -20,6 +20,17 @@ namespace ecoc_bookstore
             InitializeComponent();
         }
 
+        private void DataGridView_Populate()
+        {
+            this.dataGridView1.Rows.Clear();
+
+            foreach (var v in Bookstore.Books)
+            {
+                dataGridView1.Rows.Add(new string[] { v.Title, String.Join(";", v.Author), v.Category, v.Price.ToString() });
+            }
+        }
+
+
         private void button_openXML_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -37,17 +48,18 @@ namespace ecoc_bookstore
             }
         }
 
-
-        private void DataGridView_Populate()
+        private void button_saveXML_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.Rows.Clear();
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            foreach (var v in Bookstore.Books)
-            { 
-                dataGridView1.Rows.Add(new string [] { v.Title, String.Join(";", v.Author) , v.Category, v.Price.ToString() });
+            saveFileDialog1.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Bookstore.SaveToXml(saveFileDialog1.FileName);
             }
         }
-
-
     }
 }

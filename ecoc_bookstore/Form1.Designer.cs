@@ -74,6 +74,7 @@
             this.button_saveXML.TabIndex = 2;
             this.button_saveXML.Text = "Сохранить XML";
             this.button_saveXML.UseVisualStyleBackColor = true;
+            this.button_saveXML.Click += new System.EventHandler(this.button_saveXML_Click);
             // 
             // button_reportHTML
             // 
