@@ -12,24 +12,19 @@ namespace ecoc_bookstore
 {
     public class Bookstore
     {
-        private string Filename;
-
         public List<Book> Books { get; set; }
 
 
-        public Bookstore(string filename = "books.xml")
-        {
-            Filename = filename;
-        }
+        public Bookstore(){ }
 
 
 
-        public void LoadFromXml()
+        public void LoadFromXml(string filename = "books.xml")
         {
             XmlSerializer formatter = new XmlSerializer(typeof(List<Book>));
             try
             {
-                using (FileStream fs = new FileStream(Filename, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
                 {
                     Books = (List<Book>)formatter.Deserialize(fs);
 
@@ -40,12 +35,12 @@ namespace ecoc_bookstore
                 Console.WriteLine(e.Message);
             }
         }
-        public void SaveToXml()
+        public void SaveToXml(string filename = "books.xml")
         {
             XmlSerializer formatter = new XmlSerializer(typeof(List<Book>));
             try
             {
-                using (FileStream fs = new FileStream(Filename, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
                 {
                     formatter.Serialize(fs, Books);
                 }
