@@ -38,6 +38,7 @@
             this.button_reportHTML = new System.Windows.Forms.Button();
             this.button_deleteEntry = new System.Windows.Forms.Button();
             this.button_addEntry = new System.Windows.Forms.Button();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             this.Title,
             this.Author,
             this.Category,
-            this.Price});
+            this.Price,
+            this.Year});
             this.dataGridView1.Location = new System.Drawing.Point(12, 71);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -134,6 +136,13 @@
             this.button_addEntry.UseVisualStyleBackColor = true;
             this.button_addEntry.Click += new System.EventHandler(this.button_addEntry_Click);
             // 
+            // Year
+            // 
+            this.Year.HeaderText = "Год";
+            this.Year.MinimumWidth = 6;
+            this.Year.Name = "Year";
+            this.Year.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,6 +174,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Year;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace ecoc_bookstore
         public Form1()
         {
             Bookstore = new Bookstore();
+            Bookstore.Books = new List<Book>();
             InitializeComponent();
         }
 
@@ -26,7 +28,7 @@ namespace ecoc_bookstore
 
             foreach (var v in Bookstore.Books)
             {
-                dataGridView1.Rows.Add(new string[] { v.Title, String.Join(";", v.Author), v.Category, v.Price.ToString() });
+                dataGridView1.Rows.Add(new string[] { v.Title, String.Join(";", v.Author), v.Category, v.Price.ToString(), v.Year.ToString() });
             }
         }
 
@@ -50,6 +52,22 @@ namespace ecoc_bookstore
 
         private void button_saveXML_Click(object sender, EventArgs e)
         {
+            Bookstore.Books.Clear();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                Bookstore.Books.Add(new Book()
+                {
+                    Title = row.Cells[0].Value?.ToString() ?? string.Empty,
+                    Author = row.Cells[1].Value?.ToString().Split(';'),
+                    Category = row.Cells[2].Value?.ToString() ?? string.Empty,
+                    Price = double.Parse(row.Cells[3].Value?.ToString() ?? "0.0") ,
+                    Year = int.Parse(row.Cells[4].Value?.ToString() ?? "0")
+                }); ;
+            }
+
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
@@ -71,6 +89,7 @@ namespace ecoc_bookstore
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
+                if (row.IsNewRow) continue;
                 dataGridView1.Rows.RemoveAt(row.Index);
             }
         }
