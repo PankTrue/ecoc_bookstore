@@ -61,5 +61,23 @@ namespace ecoc_bookstore
                 Bookstore.SaveToXml(saveFileDialog1.FileName);
             }
         }
+
+        private void button_reportHTML_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_deleteEntry_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(row.Index);
+            }
+        }
+
+        private void button_addEntry_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add();
+        }
     }
 }

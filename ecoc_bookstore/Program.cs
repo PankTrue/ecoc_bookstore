@@ -18,22 +18,9 @@ namespace ecoc_bookstore
         [STAThread]
         static void Main()
         {
-
-            Bookstore b = new Bookstore();
-
-            b.LoadFromXml();
-
-            foreach (var v in b.Books)
-            {
-                Console.WriteLine(v.Category);
-            }
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-
         }
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_openXML = new System.Windows.Forms.Button();
             this.button_saveXML = new System.Windows.Forms.Button();
             this.button_reportHTML = new System.Windows.Forms.Button();
             this.button_deleteEntry = new System.Windows.Forms.Button();
             this.button_addEntry = new System.Windows.Forms.Button();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +55,34 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 289);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Книга";
+            this.Title.MinimumWidth = 6;
+            this.Title.Name = "Title";
+            this.Title.Width = 125;
+            // 
+            // Author
+            // 
+            this.Author.HeaderText = "Автор";
+            this.Author.MinimumWidth = 6;
+            this.Author.Name = "Author";
+            this.Author.Width = 125;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.MinimumWidth = 6;
+            this.Category.Name = "Category";
+            this.Category.Width = 125;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Цена";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
             // 
             // button_openXML
             // 
@@ -84,6 +112,7 @@
             this.button_reportHTML.TabIndex = 3;
             this.button_reportHTML.Text = "Отчет в HTML";
             this.button_reportHTML.UseVisualStyleBackColor = true;
+            this.button_reportHTML.Click += new System.EventHandler(this.button_reportHTML_Click);
             // 
             // button_deleteEntry
             // 
@@ -93,6 +122,7 @@
             this.button_deleteEntry.TabIndex = 4;
             this.button_deleteEntry.Text = "Удалить запись";
             this.button_deleteEntry.UseVisualStyleBackColor = true;
+            this.button_deleteEntry.Click += new System.EventHandler(this.button_deleteEntry_Click);
             // 
             // button_addEntry
             // 
@@ -102,34 +132,7 @@
             this.button_addEntry.TabIndex = 5;
             this.button_addEntry.Text = "Добавить запись";
             this.button_addEntry.UseVisualStyleBackColor = true;
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Книга";
-            this.Title.MinimumWidth = 6;
-            this.Title.Name = "Title";
-            this.Title.Width = 125;
-            // 
-            // Author
-            // 
-            this.Author.HeaderText = "Автор";
-            this.Author.MinimumWidth = 6;
-            this.Author.Name = "Author";
-            this.Author.Width = 125;
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Категория";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            this.Category.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Цена";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.Width = 125;
+            this.button_addEntry.Click += new System.EventHandler(this.button_addEntry_Click);
             // 
             // Form1
             // 
