@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace ecoc_bookstore
 {
-    [XmlRoot("bookstore")]
+    [XmlType(TypeName = "book")]
     public class Book
     {
         [XmlAttribute("category")]
@@ -18,7 +18,8 @@ namespace ecoc_bookstore
 
         [XmlElement(ElementName = "title")]
         public string Title { get; set; }
-        [XmlArray("authors"),XmlArrayItem("author")]
+        //[XmlArray("authors"),XmlArrayItem("author")]
+        [XmlElement("author")]
         public string[] Author { get; set; }
         
         [XmlElement(ElementName = "year")]
