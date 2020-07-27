@@ -95,53 +95,59 @@
             // 
             // button_openXML
             // 
-            this.button_openXML.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_openXML.BackColor = System.Drawing.Color.Gold;
+            this.button_openXML.ForeColor = System.Drawing.Color.Black;
             this.button_openXML.Location = new System.Drawing.Point(12, 13);
             this.button_openXML.Name = "button_openXML";
             this.button_openXML.Size = new System.Drawing.Size(138, 42);
             this.button_openXML.TabIndex = 1;
             this.button_openXML.Text = "Открыть XML";
-            this.button_openXML.UseVisualStyleBackColor = true;
+            this.button_openXML.UseVisualStyleBackColor = false;
             this.button_openXML.Click += new System.EventHandler(this.button_openXML_Click);
             // 
             // button_saveXML
             // 
+            this.button_saveXML.BackColor = System.Drawing.Color.Orange;
+            this.button_saveXML.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button_saveXML.Location = new System.Drawing.Point(176, 13);
             this.button_saveXML.Name = "button_saveXML";
             this.button_saveXML.Size = new System.Drawing.Size(157, 42);
             this.button_saveXML.TabIndex = 2;
             this.button_saveXML.Text = "Сохранить XML";
-            this.button_saveXML.UseVisualStyleBackColor = true;
+            this.button_saveXML.UseVisualStyleBackColor = false;
             this.button_saveXML.Click += new System.EventHandler(this.button_saveXML_Click);
             // 
             // button_reportHTML
             // 
+            this.button_reportHTML.BackColor = System.Drawing.Color.LimeGreen;
             this.button_reportHTML.Location = new System.Drawing.Point(947, 13);
             this.button_reportHTML.Name = "button_reportHTML";
             this.button_reportHTML.Size = new System.Drawing.Size(133, 42);
             this.button_reportHTML.TabIndex = 3;
             this.button_reportHTML.Text = "Отчет в HTML";
-            this.button_reportHTML.UseVisualStyleBackColor = true;
+            this.button_reportHTML.UseVisualStyleBackColor = false;
             this.button_reportHTML.Click += new System.EventHandler(this.button_reportHTML_Click);
             // 
             // button_deleteEntry
             // 
+            this.button_deleteEntry.BackColor = System.Drawing.Color.Red;
             this.button_deleteEntry.Location = new System.Drawing.Point(3, 536);
             this.button_deleteEntry.Name = "button_deleteEntry";
-            this.button_deleteEntry.Size = new System.Drawing.Size(201, 37);
+            this.button_deleteEntry.Size = new System.Drawing.Size(205, 48);
             this.button_deleteEntry.TabIndex = 4;
             this.button_deleteEntry.Text = "Удалить запись";
-            this.button_deleteEntry.UseVisualStyleBackColor = true;
+            this.button_deleteEntry.UseVisualStyleBackColor = false;
             this.button_deleteEntry.Click += new System.EventHandler(this.Button_deleteEntry_Click);
             // 
             // button_addEntry
             // 
+            this.button_addEntry.BackColor = System.Drawing.Color.RoyalBlue;
             this.button_addEntry.Location = new System.Drawing.Point(228, 536);
             this.button_addEntry.Name = "button_addEntry";
-            this.button_addEntry.Size = new System.Drawing.Size(176, 37);
+            this.button_addEntry.Size = new System.Drawing.Size(175, 48);
             this.button_addEntry.TabIndex = 5;
             this.button_addEntry.Text = "Добавить запись";
-            this.button_addEntry.UseVisualStyleBackColor = true;
+            this.button_addEntry.UseVisualStyleBackColor = false;
             this.button_addEntry.Click += new System.EventHandler(this.button_addEntry_Click);
             // 
             // Form1
