@@ -35,8 +35,6 @@ namespace ecoc_bookstore
             dummyNSs.Add(string.Empty, string.Empty);
         }
 
-
-
         public void LoadFromXml(string filename = "bookstore.xml")
         {
             try

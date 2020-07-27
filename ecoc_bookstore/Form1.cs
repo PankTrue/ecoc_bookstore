@@ -32,6 +32,25 @@ namespace ecoc_bookstore
             }
         }
 
+        private void DataGridViewtoBooks()
+        {
+            Bookstore.Books.Clear();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                Bookstore.Books.Add(new Book()
+                {
+                    Title = row.Cells[0].Value?.ToString() ?? string.Empty,
+                    Author = row.Cells[1].Value?.ToString().Split(';'),
+                    Category = row.Cells[2].Value?.ToString() ?? string.Empty,
+                    Price = double.Parse(row.Cells[3].Value?.ToString() ?? "0.0"),
+                    Year = int.Parse(row.Cells[4].Value?.ToString() ?? "0")
+                }); ;
+            }
+        }
+
 
         private void button_openXML_Click(object sender, EventArgs e)
         {
@@ -52,21 +71,7 @@ namespace ecoc_bookstore
 
         private void button_saveXML_Click(object sender, EventArgs e)
         {
-            Bookstore.Books.Clear();
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                Bookstore.Books.Add(new Book()
-                {
-                    Title = row.Cells[0].Value?.ToString() ?? string.Empty,
-                    Author = row.Cells[1].Value?.ToString().Split(';'),
-                    Category = row.Cells[2].Value?.ToString() ?? string.Empty,
-                    Price = double.Parse(row.Cells[3].Value?.ToString() ?? "0.0") ,
-                    Year = int.Parse(row.Cells[4].Value?.ToString() ?? "0")
-                }); ;
-            }
+            DataGridViewtoBooks();
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
@@ -82,6 +87,8 @@ namespace ecoc_bookstore
 
         private void button_reportHTML_Click(object sender, EventArgs e)
         {
+            DataGridViewtoBooks();
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             saveFileDialog.Filter = "html files (*.html)|*.html|All files (*.*)|*.*";

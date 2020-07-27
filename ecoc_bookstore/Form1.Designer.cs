@@ -33,12 +33,12 @@
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_openXML = new System.Windows.Forms.Button();
             this.button_saveXML = new System.Windows.Forms.Button();
             this.button_reportHTML = new System.Windows.Forms.Button();
             this.button_deleteEntry = new System.Windows.Forms.Button();
             this.button_addEntry = new System.Windows.Forms.Button();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 289);
+            this.dataGridView1.Size = new System.Drawing.Size(1089, 459);
             this.dataGridView1.TabIndex = 0;
             // 
             // Title
@@ -86,6 +86,13 @@
             this.Price.Name = "Price";
             this.Price.Width = 125;
             // 
+            // Year
+            // 
+            this.Year.HeaderText = "Год";
+            this.Year.MinimumWidth = 6;
+            this.Year.Name = "Year";
+            this.Year.Width = 125;
+            // 
             // button_openXML
             // 
             this.button_openXML.Location = new System.Drawing.Point(12, 13);
@@ -108,7 +115,7 @@
             // 
             // button_reportHTML
             // 
-            this.button_reportHTML.Location = new System.Drawing.Point(645, 13);
+            this.button_reportHTML.Location = new System.Drawing.Point(947, 13);
             this.button_reportHTML.Name = "button_reportHTML";
             this.button_reportHTML.Size = new System.Drawing.Size(133, 42);
             this.button_reportHTML.TabIndex = 3;
@@ -118,7 +125,7 @@
             // 
             // button_deleteEntry
             // 
-            this.button_deleteEntry.Location = new System.Drawing.Point(12, 385);
+            this.button_deleteEntry.Location = new System.Drawing.Point(3, 536);
             this.button_deleteEntry.Name = "button_deleteEntry";
             this.button_deleteEntry.Size = new System.Drawing.Size(201, 37);
             this.button_deleteEntry.TabIndex = 4;
@@ -128,7 +135,7 @@
             // 
             // button_addEntry
             // 
-            this.button_addEntry.Location = new System.Drawing.Point(265, 385);
+            this.button_addEntry.Location = new System.Drawing.Point(228, 536);
             this.button_addEntry.Name = "button_addEntry";
             this.button_addEntry.Size = new System.Drawing.Size(176, 37);
             this.button_addEntry.TabIndex = 5;
@@ -136,19 +143,12 @@
             this.button_addEntry.UseVisualStyleBackColor = true;
             this.button_addEntry.Click += new System.EventHandler(this.button_addEntry_Click);
             // 
-            // Year
-            // 
-            this.Year.HeaderText = "Год";
-            this.Year.MinimumWidth = 6;
-            this.Year.Name = "Year";
-            this.Year.Width = 125;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1144, 607);
             this.Controls.Add(this.button_addEntry);
             this.Controls.Add(this.button_deleteEntry);
             this.Controls.Add(this.button_reportHTML);
@@ -156,7 +156,7 @@
             this.Controls.Add(this.button_openXML);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bookstore";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
