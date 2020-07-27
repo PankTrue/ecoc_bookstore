@@ -73,11 +73,12 @@ namespace ecoc_bookstore
         {
             DataGridViewtoBooks();
 
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-            saveFileDialog1.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 0;
-            saveFileDialog1.RestoreDirectory = true;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*",
+                FilterIndex = 0,
+                RestoreDirectory = true
+            };
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -89,11 +90,12 @@ namespace ecoc_bookstore
         {
             DataGridViewtoBooks();
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            saveFileDialog.Filter = "html files (*.html)|*.html|All files (*.*)|*.*";
-            saveFileDialog.FilterIndex = 0;
-            saveFileDialog.RestoreDirectory = true;
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "html files (*.html)|*.html|All files (*.*)|*.*",
+                FilterIndex = 0,
+                RestoreDirectory = true
+            };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -101,7 +103,7 @@ namespace ecoc_bookstore
             }
         }
 
-        private void button_deleteEntry_Click(object sender, EventArgs e)
+        private void Button_deleteEntry_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {

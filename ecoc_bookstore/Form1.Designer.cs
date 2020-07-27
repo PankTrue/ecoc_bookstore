@@ -95,6 +95,7 @@
             // 
             // button_openXML
             // 
+            this.button_openXML.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_openXML.Location = new System.Drawing.Point(12, 13);
             this.button_openXML.Name = "button_openXML";
             this.button_openXML.Size = new System.Drawing.Size(138, 42);
@@ -131,7 +132,7 @@
             this.button_deleteEntry.TabIndex = 4;
             this.button_deleteEntry.Text = "Удалить запись";
             this.button_deleteEntry.UseVisualStyleBackColor = true;
-            this.button_deleteEntry.Click += new System.EventHandler(this.button_deleteEntry_Click);
+            this.button_deleteEntry.Click += new System.EventHandler(this.Button_deleteEntry_Click);
             // 
             // button_addEntry
             // 
