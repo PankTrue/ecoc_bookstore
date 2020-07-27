@@ -82,7 +82,16 @@ namespace ecoc_bookstore
 
         private void button_reportHTML_Click(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
 
+            saveFileDialog.Filter = "html files (*.html)|*.html|All files (*.*)|*.*";
+            saveFileDialog.FilterIndex = 0;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Bookstore.ExportToHtml(saveFileDialog.FileName);
+            }
         }
 
         private void button_deleteEntry_Click(object sender, EventArgs e)

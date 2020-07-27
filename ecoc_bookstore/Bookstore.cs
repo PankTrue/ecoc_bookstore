@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Xml.Xsl;
 
 namespace ecoc_bookstore
 {
@@ -35,7 +37,7 @@ namespace ecoc_bookstore
 
 
 
-        public void LoadFromXml(string filename = "books.xml")
+        public void LoadFromXml(string filename = "bookstore.xml")
         {
             try
             {
@@ -52,7 +54,7 @@ namespace ecoc_bookstore
                 Console.WriteLine(e.Message);
             }
         }
-        public void SaveToXml(string filename = "books.xml")
+        public void SaveToXml(string filename = "bookstore.xml")
         {
             try
             {
@@ -65,6 +67,36 @@ namespace ecoc_bookstore
                 }
             }
             catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void ExportToHtml(string html_filename = "report.html", string xslt_filename = "reportHTML.xslt")
+        {
+            try
+            {
+                var xml_str = new StringBuilder();
+                using (XmlWriter xw = XmlWriter.Create(xml_str, xmlWriterSettings))
+                {
+                    formatter.Serialize(xw, Books, dummyNSs);
+                }
+
+                XslCompiledTransform transform = new XslCompiledTransform();
+                using (XmlReader reader = XmlReader.Create(xslt_filename))
+                {
+                    transform.Load(reader);
+                }
+
+                StringWriter results = new StringWriter();
+                using (XmlReader reader = XmlReader.Create(new StringReader(xml_str.ToString())))
+                {
+                    transform.Transform(reader, null, results);
+                }
+
+                File.WriteAllText(html_filename, results.ToString());
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

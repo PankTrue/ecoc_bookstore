@@ -18,7 +18,7 @@ namespace ecoc_bookstore
 
         [XmlElement(ElementName = "title")]
         public string Title { get; set; }
-        //[XmlArray("authors"),XmlArrayItem("author")]
+        
         [XmlElement("author")]
         public string[] Author { get; set; }
         

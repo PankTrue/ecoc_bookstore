@@ -18,6 +18,9 @@ namespace ecoc_bookstore
         [STAThread]
         static void Main()
         {
+            var b = new Bookstore();
+            b.LoadFromXml("bookstore.xml");
+            b.ExportToHtml();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
